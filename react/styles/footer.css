@@ -1,0 +1,23 @@
+
+  
+  .righticon {
+    position: relative;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .righticon input {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 9px;
+  }
+  
+  .righticon input {
+    text-indent: 23px;
+  }
+  
+  .righticon .faRighticon {
+    position: absolute;
+    right: 0px;
+    z-index: -2;
+  }

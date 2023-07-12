@@ -1,0 +1,26 @@
+{
+  "countdown": {
+    "component": "Countdown"
+  },
+  "footer-desktop": {
+    "component": "FooterDesktop"
+  },
+  "footer-mobile": {
+    "component": "FooterMobile"
+  },
+  "countdown.title": {
+    "component": "Title"
+  },
+  "megamenu-desktop": {
+    "component": "MegamenuDesktop"
+  },
+  "megamenu-mobile": {
+    "component": "MegamenuMobile"
+  },
+  "contactus-form": {
+    "component": "ContactUsform"
+  },
+  "contactus-table":{
+    "component": "ContactUsTable"
+  }
+}
