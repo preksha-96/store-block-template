@@ -20,7 +20,10 @@
   "contactus-form": {
     "component": "ContactUsform"
   },
-  "contactus-table":{
+  "contactus-table": {
     "component": "ContactUsTable"
+  },
+  "contactus-service": {
+    "component": "ContactTableService"
   }
 }
