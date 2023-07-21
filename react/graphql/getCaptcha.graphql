@@ -1,0 +1,16 @@
+query getCaptcha(
+ app:String,
+   version:String
+) {
+  publicSettingsForApp(
+     app:$app,
+   version:$version
+  ) @context(provider: "vtex.store-graphql") {
+    fields {
+      value
+      key          
+    }
+  }
+}
+
+

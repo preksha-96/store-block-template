@@ -22,5 +22,17 @@
     "vtex.store-icons": "0.x",
     "vtex.file-manager-graphql": "0.x"
   },
+  "settingsSchema": {
+    "title": "Preksha Cs",
+    "type": "object",
+    "access": "public",
+    "properties": {
+      "recaptchaKey": {
+        "title": "captcha",
+        "description": "Enter the recapthhakey for  token from user & rules",
+        "type": "string"
+      }
+    }
+  },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useRef, useState } from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useMutation } from 'react-apollo';
 import createDocument from '../graphql/postContact.graphql';
 
@@ -12,7 +12,7 @@ const ContactUsform = () => {
     const [uploadfile] = useState('')
     const captchaRef = useRef(null)
     const [token, setToken] = useState('')
-
+    const [sitek, setSitekey] = useState('')
     const [state, setState] = useState({
         firstname: "",
         lastname: "",
@@ -91,7 +91,20 @@ const ContactUsform = () => {
         }
     };
 
+    useEffect(() => {
+        fetchCaptcha()
+    }, [])
 
+    const fetchCaptcha = async () => {
+        const res = await fetch('/captcha')
+        if (res.ok) {
+            const response = await res.json()
+            if(response.sitekey.length){
+                setSitekey(response.sitekey)
+            }
+            
+        }
+    }
 
 
     return (
@@ -142,10 +155,10 @@ const ContactUsform = () => {
                     </div>
                     <div className="mt3">
                         {/* Google reCAPTCHA */}
-                        <ReCAPTCHA onChange={(e) => { handleRecaptchaChange(e) }}
-                            sitekey='6LdYPP4mAAAAAJLCpaVhKnQ6m9GMNiju8SAnBWK8' // Replace with your reCAPTCHA site key
+                        {sitek && <ReCAPTCHA onChange={(e) => { handleRecaptchaChange(e) }}
+                            sitekey={sitek} // Replace with your reCAPTCHA site key
                             ref={captchaRef}
-                        />
+                        />}
                     </div>
                     <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="submit" disabled={!token && !token.length} /></div>
 
